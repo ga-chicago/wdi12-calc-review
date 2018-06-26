@@ -19,18 +19,21 @@ $('.num').on('click', (e) => {
   // console.log($clickedDiv, "here's the same element, but jqueryified, we needed to this so we could use jquery methods on it")
   console.log($clickedDiv)
   
-  // 
+  // get the number (which is a string) from the div
   const theNum = $clickedDiv.text()
   console.log(theNum)
 
   // add number to display
-  $('#display').text(theNum)
+  // $('#display').append(theNum)
 
   // grab text from display
+  const displayText = $('#display').text()
 
   // add (concatenate) theNum to it
+  const newDisplayText = displayText + theNum;
 
   // put the new concatenated value back in the display
+  $('#display').text(newDisplayText);
 
 })
 
