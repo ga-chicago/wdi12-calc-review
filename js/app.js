@@ -24,7 +24,7 @@ $('.num').on('click', (e) => {
   // console.log(theNum)
 
   // grab text from display
-  const displayText = $('#display').text()
+  let displayText = $('#display').text()
 
   // find out if there was a period
   let periodFound = false;
@@ -38,12 +38,28 @@ $('.num').on('click', (e) => {
     }        
   }
 
+  // do we need to get rid of the zero?
+  // rememeber to keep it if person is entering decimals
+
+  console.log(displayText)
+  // if the display says "0" 
+  if(displayText==="0") {
+    console.log("display text is zero if statement")
+
+    // if the person is not trying to type a decimal
+    if(theNum !== ".") {
+      console.log("not a dot. we should clear the display")
+      // clear the display before numeric input
+      // $('#display').text("") 
+      displayText = ""
+    }
+
+  }
+
   // if period
   if(periodFound) {
     // do nothing
-    
   } else  {
-    
     // add (concatenate) theNum to it
     const newDisplayText = displayText + theNum;
     // put the new concatenated value back in the display
