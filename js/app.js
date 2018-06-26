@@ -40,4 +40,8 @@ $('.num').on('click', (e) => {
 
 $('.control').on('click', (e) => {
   console.log("you clicked control button")
+  // clear the display
+  $('#display').text('0');
 })
+
+
